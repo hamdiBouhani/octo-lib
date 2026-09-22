@@ -5,6 +5,7 @@ go 1.27.1
 require (
 	github.com/cucumber/godog v0.16.0
 	github.com/gin-gonic/gin v1.12.0
+	github.com/golang-jwt/jwt/v4 v4.5.2
 	github.com/golang-migrate/migrate/v4 v4.20.1
 	github.com/google/uuid v1.6.0
 	github.com/kelseyhightower/envconfig v1.4.0
