@@ -13,6 +13,7 @@ type GodogContext struct {
 	Server   *gin.Engine
 	Recorder *httptest.ResponseRecorder
 	Ctx      context.Context
+	Token    string
 }
 
 func NewGodogContext() *GodogContext {
@@ -34,4 +35,5 @@ func NewGodogContext() *GodogContext {
 func (gc *GodogContext) Reset() {
 	gc.Recorder = httptest.NewRecorder()
 	gc.Ctx = context.Background()
+	gc.Token = ""
 }

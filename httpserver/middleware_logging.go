@@ -29,6 +29,7 @@ func LoggingMiddleware(logger *zap.Logger) gin.HandlerFunc {
 			zap.String("client_ip", c.ClientIP()),
 			zap.String("trace_id", traceID),
 			zap.String("span_id", spanID),
+			zap.String("request_id", c.GetString("request_id")),
 		)
 	}
 }

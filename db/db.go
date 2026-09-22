@@ -15,7 +15,12 @@ type DB struct {
 }
 
 func Connect(url string) (*DB, error) {
-	gormDB, err := gorm.Open(postgres.Open(url), &gorm.Config{})
+	gormDB, err := gorm.Open(
+		postgres.Open(url),
+		&gorm.Config{
+			Logger: NewCtxLogger(),
+		},
+	)
 	if err != nil {
 		return nil, fmt.Errorf("gorm connect failed: %w", err)
 	}

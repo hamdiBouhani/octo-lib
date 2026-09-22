@@ -11,6 +11,15 @@ func TracingMiddleware(serviceName string) gin.HandlerFunc {
 
 	return func(c *gin.Context) {
 		ctx, span := tracer.Start(c.Request.Context(), c.FullPath())
+
+		traceID := span.SpanContext().TraceID().String()
+		c.Set("trace_id", traceID)
+
+		// If request_id not set, use trace_id
+		if c.GetString("request_id") == "" {
+			c.Set("request_id", traceID)
+		}
+
 		span.SetAttributes(
 			attribute.String("http.method", c.Request.Method),
 			attribute.String("http.path", c.Request.URL.Path),
