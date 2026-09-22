@@ -100,3 +100,12 @@ run:
     @echo "Running octo-lib..."
     go run ./cmd/server
 
+
+.PHONY: e2e
+e2e:
+    @echo "Running Godog E2E tests..."
+    godog run ./features
+
+.PHONY: e2e
+e2e:
+    go test ./e2e -v
