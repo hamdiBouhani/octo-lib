@@ -17,7 +17,6 @@ func main() {
 	log := logger.New(cfg.LogLevel)
 	defer log.Sync()
 
-	// Init tracing
 	tp, err := tracing.Init("octo-lib", "localhost:4318")
 	if err != nil {
 		log.Fatal("failed to init tracing", zap.Error(err))
