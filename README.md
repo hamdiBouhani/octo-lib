@@ -1,7 +1,7 @@
 # octo-lib
 
 A shared enterprise-grade Go library providing reusable building blocks for all backend services in our ecosystem.  
-It standardizes configuration, logging, HTTP servers, middleware, tracing, metrics, database access, Kafka integration, OAuth2 authentication, RBAC authorization, health checks, utilities, and test helpers.
+It standardizes configuration, logging, HTTP servers, middleware, tracing, metrics, database access, OAuth2 authentication, RBAC authorization, health checks, utilities, and test helpers.
 
 This library ensures consistency, reliability, and observability across all microservices.
 
