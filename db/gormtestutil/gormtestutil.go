@@ -29,3 +29,10 @@ func NewGormTest(models ...interface{}) *gorm.DB {
 
 	return db
 }
+
+// WithTx runs a test inside a transaction and rolls back automatically.
+func WithTx(db *gorm.DB, fn func(tx *gorm.DB)) {
+	tx := db.Begin()
+	defer tx.Rollback()
+	fn(tx)
+}
